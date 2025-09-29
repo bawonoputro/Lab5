@@ -3,7 +3,7 @@
     "path": "~/Documents/LiU/Advanced Programming R/Lab5/Lab5/R/get_KPI.R",
     "project_path": "R/get_KPI.R",
     "type": "r_source",
-    "hash": "3450410187",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1759152708299.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "7,49",
+        "cursorPosition": "5,3",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1759153391,
+    "lastKnownWriteTime": 1759162810,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1759153391690,
+    "last_content_update": 1759162810730,
     "read_only": false,
     "read_only_alternatives": []
 }
