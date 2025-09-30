@@ -1,0 +1,57 @@
+---
+title: "Kolada API using R"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{Kolada API using R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 7, fig.height = 4, cache = TRUE)
+
+# Only run examples if the API is reachable (keeps checks stable)
+
+api_ok <- TRUE
+try({
+  resp <- httr::GET("https://api.kolada.se/v3/municipality")
+  api_ok <- httr::http_error(resp) == FALSE
+}, silent = TRUE)
+
+peek <- function(x, n = 6) utils::head(x, n)
+```
+
+```{r, echo=FALSE}
+library(Lab5)
+```
+
+
+## Municipality Function
+```{r}
+mun <- get_municipalities()
+peek(mun)
+```
+
+
+## KPIs Function
+```{r}
+kpi <- get_kpi()
+keep <- intersect(names(kpi), c("id","title","owner","description","type"))
+peek(kpi[keep])
+
+term <- "employment|jobb|syssels"
+emp_kpi <- subset(kpi, grepl(term, tolower(paste(title, description))))
+peek(emp_kpi[intersect(names(emp_kpi), c("id","title","owner"))])
+```
+
+
+## Organizational Units Function
+```{r}
+ou <- get_ou()
+peek(ou)
+
+ou_idx <- grepl("stockholm", tolower(paste(ou$title, ou$id)))
+peek(ou[ou_idx, ])
+```
