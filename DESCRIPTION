@@ -1,21 +1,27 @@
 Package: Lab5
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Using API for Kolada
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Paripurna", "Bawonoputro",
+      email = "parba751@student.liu.se",
       role = c("aut", "cre")
-    )
+    ),
+    person(
+      "Sreyas", "A S",
+      email = "sread272@student.liu.se",
+      role = c("aut")
+      )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: This package uses API for pulling data from Kolada Website.
+    This package is used by a Shiny app of ShinyKolada repository.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     knitr,
+    DT,
     rmarkdown,
     httr,
     jsonlite,
